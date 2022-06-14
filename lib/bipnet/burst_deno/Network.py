@@ -10,7 +10,7 @@ import pytorch_lightning as pl
 
 from torchvision.ops import DeformConv2d
 
-from utils.metrics import PSNR
+from .utils.metrics import PSNR
 psnr_fn = PSNR(boundary_ignore=40)
 
 from pytorch_lightning import seed_everything
@@ -298,12 +298,15 @@ class BIPNet(pl.LightningModule):
         return aligned_feat
 
     def forward(self, burst, noise_estimate):
-                
+
         if noise_estimate.dim() == 4:
             noise_estimate_re = noise_estimate.unsqueeze(1).repeat(1, burst.shape[1], 1, 1, 1)
         else:
             noise_estimate_re = noise_estimate
 
+        # print("burst.shape: ",burst.shape)
+        # print("noise_estimate.shape: ",noise_estimate.shape)
+        # print("noise_estimate_re.shape: ",noise_estimate_re.shape)
         burst = torch.cat((burst, noise_estimate_re), dim=2)
 
         burst = burst[0]

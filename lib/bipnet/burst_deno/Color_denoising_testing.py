@@ -35,7 +35,7 @@ args = parser.parse_args()
 
 ######################################### Load BIPNet ####################################################
 
-model = BIPNet(mode='color').load_from_checkpoint(args.weights, mode='color')
+model = BIPNet(mode='color')#.load_from_checkpoint(args.weights, mode='color')
 
 print("Model Loaded")
 model = model
