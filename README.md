@@ -11,19 +11,22 @@
 ## Installation
 
 ```
+git clone https://github.com/gauenk/bipnet
+cd bipnet
 python -m pip install -e ./lib --user
 ```
 
 ## Citation
 If you use BIPNet, please consider citing:
-    
-    @inproceedings{dudhane2021burst,
-            title={Burst Image Restoration and Enhancement},
-            author={Akshay Dudhane and Syed Waqas Zamir and Salman Khan and Fahad Shahbaz Khan and Ming-Hsuan Yang},
-            booktitle={CVPR},
-            year={2022}
-          }
 
+```
+@inproceedings{dudhane2021burst,
+    title={Burst Image Restoration and Enhancement},
+    author={Akshay Dudhane and Syed Waqas Zamir and Salman Khan and Fahad Shahbaz Khan and Ming-Hsuan Yang},
+    booktitle={CVPR},
+    year={2022}
+}
+```
 
 
 **Acknowledgment:** This code is based on the [NTIRE21_BURSTSR](https://github.com/goutamgmb/NTIRE21_BURSTSR) toolbox.
